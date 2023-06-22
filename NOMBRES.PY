@@ -5,7 +5,7 @@ for i in range (4):
     nom=input("Ingrese nombre: ")
     edad=int(input("Ingrese la Edad: "))
     diccionario[nom]=edad
-archivo.write(f"nombre: {nom}, Edad:{edad}\n")
+archivo.write(f"nombre: {nom}, Edad:{edad}\n") 
 for nom, edad in diccionario.items():
     print(nom, edad)
     
@@ -13,12 +13,14 @@ for nom, edad in diccionario.items():
 selec=input("Seleccione el nombre: ")
 
 while True: 
+        print("------------------------+")
         print("Menu de movimientos: ")
         print("1.Despedir")
         print("2.Renovacion")
         print("3.Aumento")
         print("4.Asenso")
         print("5.Salir")
+        print("-------------------------+")
         break
 
 opcion= input("Seleccione una: ")

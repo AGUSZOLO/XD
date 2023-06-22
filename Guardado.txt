@@ -1,4 +1,0 @@
-nombre: Emi, Edad:20
-nombre: Emi, Edad:20
-nombre: Emi, Edad:30
-nombre: Agustin, Edad:30
