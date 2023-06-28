@@ -1,0 +1,69 @@
+#3) Escribir un algoritmo que solicite ingresar numeros enteros, hasta que el usuario ingrese un cero, guardar los numeros ingresados
+# en una lista y calcular la sumatoria y el promedio de los valores que contiene dicha lista.
+import string
+
+while True:
+    print("=========================")
+    print("Menu de Opciones")
+    print("1. Contar ocurrencias")
+    print("2. Número negativo o positivo")
+    print("3. Promedio de números")
+    print("4. Suma de dígitos")
+    print("=============================")
+    
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+        frase = input("Ingrese una frase: ")
+        frase = frase.lower()
+        letras = {}
+        for letra in string.ascii_lowercase:
+            ocurrencias = frase.count(letra)
+            if ocurrencias > 0:
+                letras[letra] = ocurrencias
+        for letra, ocurrencia in letras.items():
+            print(f"La letra '{letra}' aparece {ocurrencia} veces en la frase")
+        
+    elif opcion == "2":
+        num = int(input("Ingrese un número: "))
+        while num != 0:
+            if num > 0:
+                print("Número positivo")
+            elif num < 0:
+                print("Número negativo")
+            num = int(input("Ingrese un número: "))
+        print("Número igual a cero")
+
+    elif opcion == "3":
+        lista = []
+        numeros = int(input("Ingrese números: "))
+        while numeros != 0:
+            lista.append(numeros)
+            numeros = int(input("Ingrese números: "))
+
+        suma_total = sum(lista)
+        cantidad_numeros = len(lista)
+
+        if cantidad_numeros > 0:
+            promedio = suma_total / cantidad_numeros
+            print("El promedio de los números ingresados es:", promedio)
+            print("La suma de los números es:", suma_total)
+        else:
+            print("No se ingresó ningún número")
+
+    elif opcion == "4":
+        def sumar_digitos(numero):
+            suma = 0
+            while numero > 0:
+                suma += numero % 10
+                numero //= 10
+            return suma
+
+        numero = int(input("Ingrese un número entero: "))
+        resultado = sumar_digitos(numero)
+        print("La suma de los dígitos es:", resultado)
+
+    else:
+        print("Opción inválida. Por favor, seleccione una opción válida.")
+
+    input("Acción realizada, presione enter para continuar...")
